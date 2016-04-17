@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Poké clicker</title>
+	<link href="css/cookie.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<script src="http://bxslider.com/js/jquery.min.js"></script>
+	<script src="http://bxslider.com/lib/jquery.bxslider.js"></script>
+
+</head>
+
+
+<body>
+<!-- Background + parallax ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<div class="bg__color">
+		<img src="img/bgcolor.png"/>
+	</div>
+	
+	<!-- Layers parallax -->
+	<div id="parallax" class="parallax-viewport">
+		<div class="parallax-layer bg1">
+	        <img src="img/bg1bis.jpg" alt=""/>
+	    </div>
+
+		<div class="parallax-layer bg2">
+	        <img src="img/bg2.png" alt=""/>
+	    </div>
+
+		<div class="parallax-layer pkmn">
+			<img src="img/001b.png" id="pkmnSauvage" alt="some image"/>
+		</div>
+
+	    <div class="parallax-layer bg3">
+	        <img src="img/bg3.png" alt=""/>
+	    </div>
+
+	    <div class="parallax-layer bg4">
+	        <img src="img/bg4.png" alt=""/>
+	    </div>
+
+		<div class="parallax-layer main__bouton">
+			<img id="pokeballClic" src="img/pokeball.png"/>
+		</div>
+	</div>
+
+	<!-- Nuages et forground -->
+	<div class="bxslider">
+		<img src="img/clouds1b.png"/>
+		<img src="img/clouds2b.png"/>
+	</div>
+
+	<div class="forward">
+		<img src="img/ui.png"/>
+	</div>
+
+<!-- Nom du pokemon sauvage ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-3">
+				<div id="afficherPokemon"></div>
+			</div>
+		</div>
+	</div>
+
+<!-- Barre progression ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-3">
+				<div id="myProgress">
+ 					<div id="myBar" class="back-vert"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- Lecteur et musiques ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<div class="container-fluid">
+		<div class="col-lg-12 sound">
+			<audio id="audioPlayer" ontimeupdate="update(this)" src="sound/combat1.mp3"></audio>
+			<button class="control" onclick="play('audioPlayer', this)">Play</button>
+			<button class="control" onclick="resume('audioPlayer')">Stop</button>
+			
+			<span class="volume">
+			    <a class="stick1" onclick="volume('audioPlayer', 0)"></a>
+			    <a class="stick2" onclick="volume('audioPlayer', 0.3)"></a>
+			    <a class="stick3" onclick="volume('audioPlayer', 0.5)"></a>
+			    <a class="stick4" onclick="volume('audioPlayer', 0.7)"></a>
+			    <a class="stick5" onclick="volume('audioPlayer', 1)"></a>
+			</span>
+			
+			<div id="progressBarControl">
+		        <div id="progressBar">Pas de lecture</div>
+		    </div>
+		</div>
+	</div>
+
+<!-- Expérience Exp ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<div class="container-fluid">	
+		<div class="col-lg-12 main__exp">			
+			<div id="affichage"></div>
+		</div>
+	</div>
+
+<!-- Achats ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<div class="container-fluid">
+		<div class="col-lg-4 col-lg-offset-8 achat">
+			<img src="img/energie_feu_petit.png"/>
+				<button id="multiplicateurFeu"></button></br>
+			<img src="img/energie_eau_petit.png"/>
+				<button id="multiplicateurEau"></button></br>
+			<img src="img/energie_plante_petit.png"/>
+				<button id="multiplicateurPlante"></button></br>
+			<img src="img/energie_incolore_petit.png"/>
+				<button id="autoclick"></button>
+		</div>	
+	</div>
+	
+
+<!-- Script ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<script src="js/cookie.js"></script>
+
+	<!-- jQuery et script parallax -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.jparallax.js"></script>
+
+	<!-- script qui permet de lancer la fonction jparallax lorsqu'on est dans la balise avec l'id parallax -->
+		<script type="text/javascript">
+		$(document).ready(function () {  
+		       $('#parallax').jparallax();
+		});  
+		</script>
+
+</body>
+
+</html>
